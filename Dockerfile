@@ -13,7 +13,7 @@ RUN apk --update add openjdk7-jre-base openssl \
     && wget -O /tmp/elasticsearch.tar.gz https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ELASTICSEARCH_VERSION}.tar.gz \
     && tar -C /tmp -xvzf /tmp/elasticsearch.tar.gz \
     && mv /tmp/elasticsearch-${ELASTICSEARCH_VERSION}/* /opt/elasticsearch \
-    && rm -rf /tmp/elasticsearch.tar.gz /tmp/elasticsearch-${ELASTICSEARCH_VERSION}
+    && rm -rf /tmp/elasticsearch.tar.gz /tmp/elasticsearch-${ELASTICSEARCH_VERSION} /var/cache/apk/*
 
 EXPOSE 9200 9300
 
